@@ -1,15 +1,14 @@
 {
-  "author": "User_redacted",
-  "cat": "Certutil_Detected",
+  "author": "redacted",
+  "cat": "T1105 - Verified Microsoft Certutil Ingress Tool Transfer",
   "detect": {
     "event": {
       "COMMAND_LINE": "certutil.exe  -urlcache -?",
       "FILE_IS_SIGNED": 1,
       "FILE_PATH": "C:\\Windows\\System32\\certutil.exe",
       "HASH": "4e7bce3210bf6128d9a1532f912b7252df43195f729ffdd03d67b186bbe36241",
-      "MEMORY_USAGE": 36864,
       "PARENT": {
-        "BASE_ADDRESS": 14070676y2386290688,
+        "BASE_ADDRESS": 140702386290688,
         "COMMAND_LINE": "\"C:\\WINDOWS\\system32\\cmd.exe\" ",
         "FILE_IS_SIGNED": 1,
         "FILE_PATH": "C:\\WINDOWS\\system32\\cmd.exe",
@@ -21,56 +20,55 @@
         "THIS_ATOM": "7e4e6560685f9f9ace8e339069caf30e",
         "THREADS": 3,
         "TIMESTAMP": 1774908174324,
-        "USER_NAME": "victim\\User1"
+        "USER_NAME": "redacted"
       },
       "PARENT_PROCESS_ID": 8256,
-      "PROCESS_ID": 8272,
-      "USER_NAME": "victim\\User1"
+      "PROCESS_ID": 8924
     },
     "routing": {
       "arch": 2,
       "did": "",
-      "event_id": "42f49a7e-8379-4a5d-8d27-ee6f4ea5f8db",
-      "event_time": 1774908205297,
+      "event_id": "28257e32-fecd-4c02-b8ba-820585a8fd4b",
+      "event_time": 1774908569737,
       "event_type": "NEW_PROCESS",
-      "ext_ip": "45.85.144.21",
-      "hostname": "victim.localdomain",
+      "ext_ip": "redacted",
+      "hostname": "victim.redacted",
       "iid": "cdb05f59-70a7-4703-89d2-934163464655",
       "int_ip": "redacted",
-      "latency": -148,
+      "latency": 1114,
       "moduleid": 2,
       "oid": "c8ff6866-24c3-407a-8056-62dd9fe279d6",
       "parent": "7e4e6560685f9f9ace8e339069caf30e",
       "plat": 268435456,
       "sid": "2e5da34a-633c-4e7e-848e-c54d653d73a2",
       "tags": [],
-      "this": "53922bc53091462b174d535969caf32d"
+      "this": "efd0a5b8e08fd829042205bd69caf49a"
     }
   },
-  "detect_id": "c32b0e62-adb4-4fc3-9589-7af869caf32d",
-  "gen_time": 1774908205149,
-  "link": "https://app.limacharlie.io/orgs/c8ff6866-24c3-407a-8056-62dd9fe279d6/sensors/2e5da34a-633c-4e7e-848e-c54d653d73a2/timeline?time=1774908205&selected=53922bc53091462b174d535969caf32d",
+  "detect_id": "183a0f9c-8998-426a-9f0f-eb2869caf49a",
+  "gen_time": 1774908570852,
+  "link": "https://app.limacharlie.io/orgs/c8ff6866-24c3-407a-8056-62dd9fe279d6/sensors/2e5da34a-633c-4e7e-848e-c54d653d73a2/timeline?time=1774908569&selected=efd0a5b8e08fd829042205bd69caf49a",
   "namespace": "general",
   "routing": {
     "arch": 2,
     "did": "",
-    "event_id": "42f49a7e-8379-4a5d-8d27-ee6f4ea5f8db",
-    "event_time": 1774908205297,
+    "event_id": "28257e32-fecd-4c02-b8ba-820585a8fd4b",
+    "event_time": 1774908569737,
     "event_type": "NEW_PROCESS",
-    "ext_ip": "45.85.144.21",
-    "hostname": "victim.localdomain",
+    "ext_ip": "redacted",
+    "hostname": "victim.redacted",
     "iid": "cdb05f59-70a7-4703-89d2-934163464655",
     "int_ip": "redacted",
-    "latency": -148,
+    "latency": 1114,
     "moduleid": 2,
     "oid": "c8ff6866-24c3-407a-8056-62dd9fe279d6",
     "parent": "7e4e6560685f9f9ace8e339069caf30e",
     "plat": 268435456,
     "sid": "2e5da34a-633c-4e7e-848e-c54d653d73a2",
     "tags": [],
-    "this": "53922bc53091462b174d535969caf32d"
+    "this": "efd0a5b8e08fd829042205bd69caf49a"
   },
   "source": "c8ff6866-24c3-407a-8056-62dd9fe279d6.cdb05f59-70a7-4703-89d2-934163464655.2e5da34a-633c-4e7e-848e-c54d653d73a2.10000000.2",
   "source_rule": "general.Win_Certutil_T1105_Detection",
-  "ts": 1774908205000
+  "ts": 1774908570000
 }
