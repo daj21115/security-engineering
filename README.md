@@ -14,6 +14,7 @@ Tools: Microsoft Sentinel · CrowdStrike · KQL · Wazuh · MITRE ATT&CK · Sigm
 | [`/sigma-rules`](./sigma-rules/) | Platform-agnostic detection rules (Sigma format) |
 | [`/yara-rules`](./yara-rules/) | File-based malware detection rules |
 | [`/snort-rules`](./snort-rules/) | Network-based detection rules |
+| [`/kql-rules`](./kql-rules/) | EDR/SIEM detection rules and hunting queries (LimaCharlie/Sentinel)
 | [`/scripts/powershell`](./scripts/powershell/) | PowerShell automation scripts for SOC/detection workflows |
 | [`/scripts/python`](./scripts/python/) | Python tools for log parsing, IOC lookup, triage automation |
 | [`/projects`](./projects/) | Standalone security engineering projects |
