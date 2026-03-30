@@ -1,0 +1,32 @@
+# =============================================================================
+# Detection Name: Verified Microsoft Certutil Ingress Tool Transfer
+# MITRE ATT&CK:  T1105 - Ingress Tool Transfer
+# Severity:       High
+# Description:    Detects certutil.exe downloading a file while verifying 
+#                 the binary's digital signature to prevent spoofing.
+# =============================================================================
+
+detect:
+  event: NEW_PROCESS
+  op: and
+  rules:
+    # 1. Look for the specific binary
+    - op: is
+      path: event/FILE_PATH
+      value: "C:\\Windows\\System32\\certutil.exe"
+    
+    # 2. Look for the "Download" flag
+    - op: contains
+      path: event/COMMAND_LINE
+      value: "-urlcache"
+    
+    # 3. High Fidelity: Verify the Digital Signature from your CODE_IDENTITY data
+    - op: is
+      path: event/SIGNATURE/CERT_SUBJECT
+      value: "C=US, S=Washington, L=Redmond, O=Microsoft Corporation, CN=Microsoft Windows"
+
+respond:
+  - action: report
+    name: "ALERT: Verified Microsoft Certutil executing -urlcache"
+  - action: tag
+    tag: "attack.t1105"
