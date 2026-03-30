@@ -1,0 +1,18 @@
+title: Suspicious Encoded PowerShell Execution
+id: 100001
+status: experimental
+description: Detects the -EncodedCommand flag used to hide malicious PowerShell strings.
+logsource:
+    product: windows
+    service: sysmon
+detection:
+    selection:
+        EventID: 1
+        CommandLine|contains: 
+            - '-enc'
+            - '-EncodedCommand'
+            - '-e '
+    condition: selection
+falsepositives:
+    - Administrative scripts
+level: high
