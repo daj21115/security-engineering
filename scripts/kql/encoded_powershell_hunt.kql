@@ -1,7 +1,0 @@
-// T1059.001 - Encoded PowerShell Hunt
-// Purpose: Detect de-obfuscated script execution
-event_type == "PROCESS_CREATION" 
-| where command_line contains "-enc" 
-    or command_line contains "-EncodedCommand" 
-    or command_line contains "-e "
-| project routing, event_id, command_line, parent_path
