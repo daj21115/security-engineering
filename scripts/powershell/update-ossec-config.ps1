@@ -12,3 +12,20 @@ $xml = [xml](Get-Content "C:\Program Files (x86)\ossec-agent\ossec.conf")
 $newLocalFile = $xml.CreateElement("localfile")
 # ... (Adding location and log_format tags)
 $xml.Save("C:\Program Files (x86)\ossec-agent\ossec.conf")
+
+<#
+<localfile>
+    <location>System</location>
+    <log_format>eventchannel</log_format>
+  </localfile>
+
+  <localfile>
+    <location>Microsoft-Windows-Sysmon/Operational</location>
+    <log_format>eventchannel</log_format>
+  </localfile>
+
+  <localfile>
+    <location>active-response\active-responses.log</location>
+    <log_format>syslog</log_format>
+  </localfile>
+#>
