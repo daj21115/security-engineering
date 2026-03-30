@@ -3,8 +3,7 @@
 Detection rules, automation scripts, and security engineering projects.
 
 Built by a cybersecurity analyst targeting Detection Engineering roles.  
-Tools: Microsoft Sentinel · CrowdStrike · KQL · Wazuh · MITRE ATT&CK · Sigma · YARA · Snort
-
+Tools: Microsoft Sentinel · CrowdStrike · KQL · Wazuh · MITRE ATT&CK · Sigma · YARA · Snort · Lima-Charlie EDR
 ---
 
 ## Repository Structure
