@@ -23,5 +23,5 @@ Standard command-line logging often misses the "inner" payload of an encoded com
 ## Usage
 
 ```bash
-# Convert to Wazuh/Elastic format using sigma-cli
+# Convert to Wazuh format using sigma-cli
 sigma convert -t es-qs -p windows_powershell win_encoded_ps.yml
