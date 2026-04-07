@@ -1,13 +1,12 @@
-title: Suspicious PsExec Service Installation
-id: 593a8d11-e341-4822-901a-7d432b6e5e9b
+title: PsExec-Style Service Installation
+id: 100005
 status: experimental
-description: Detects the installation of the PSEXESVC service, often used for lateral movement.
-author: dj
-date: 2026/04/06
-references:
-    - https://attack.mitre.org/techniques/T1543/003/
+description: Detects the installation of a service where the binary is located in the Windows root directory, a common behavior of Impacket-PsExec and randomized service binaries.
+author: Dwayne
+date: 2026/04/07
 tags:
-    - attack.lateral_movement
+    - attack.persistence
+    - attack.privilege_escalation
     - attack.t1543.003
 logsource:
     product: windows
@@ -15,8 +14,15 @@ logsource:
 detection:
     selection:
         EventID: 7045
-        ServiceName|contains: 'PSEXESVC'
-    condition: selection
+    selection_path:
+        # This matches the %%systemroot%% pattern found in your Wazuh alert
+        ImagePath|contains: 
+            - 'systemroot'
+            - 'C:\Windows\'
+    filter_legit:
+        # This prevents alerts for normal Windows services in System32
+        ImagePath|contains: 'C:\Windows\system32'
+    condition: selection and selection_path and not filter_legit
 falsepositives:
-    - Legitimate administrative use by IT staff.
-level: high
+    - Rare legacy software installers
+level: critical
