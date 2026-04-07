@@ -1,0 +1,22 @@
+title: Suspicious PsExec Service Installation
+id: 593a8d11-e341-4822-901a-7d432b6e5e9b
+status: experimental
+description: Detects the installation of the PSEXESVC service, often used for lateral movement.
+author: dj
+date: 2026/04/06
+references:
+    - https://attack.mitre.org/techniques/T1543/003/
+tags:
+    - attack.lateral_movement
+    - attack.t1543.003
+logsource:
+    product: windows
+    service: system
+detection:
+    selection:
+        EventID: 7045
+        ServiceName|contains: 'PSEXESVC'
+    condition: selection
+falsepositives:
+    - Legitimate administrative use by IT staff.
+level: high
