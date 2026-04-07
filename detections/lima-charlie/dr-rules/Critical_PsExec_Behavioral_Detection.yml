@@ -1,0 +1,19 @@
+# Detection Logic
+event: NEW_PROCESS
+op: and
+rules:
+  - op: contains
+    path: event/FILE_PATH
+    value: "C:\\Windows\\"
+  - op: not contains
+    path: event/FILE_PATH
+    value: "C:\\Windows\\System32\\"
+  - op: not contains
+    path: event/FILE_PATH
+    value: "C:\\Windows\\SysWOW64\\"
+
+  # Response Logic
+  - action: report
+    name: Critical-PsExec-Behavioral-Detection
+  - action: task
+    command: terminate
