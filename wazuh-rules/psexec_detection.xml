@@ -1,0 +1,13 @@
+<group name="windows,psexec,lateral_movement,">
+
+  <rule id="100005" level="15">
+    <if_sid>60103</if_sid>
+    <field name="win.system.eventID">^7045$</field>
+    <field name="win.eventdata.imagePath">systemroot</field>
+    <description>Critical: PsExec-Style Service Installation (Randomized Name) Detected</description>
+    <mitre>
+      <id>T1543.003</id>
+    </mitre>
+  </rule>
+
+</group>
