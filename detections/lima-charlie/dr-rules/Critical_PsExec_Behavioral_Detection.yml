@@ -4,16 +4,18 @@ op: and
 rules:
   - op: contains
     path: event/FILE_PATH
-    value: "C:\\Windows\\"
-  - op: not contains
+    value: C:\Windows\
+  - op: contains
     path: event/FILE_PATH
-    value: "C:\\Windows\\System32\\"
-  - op: not contains
+    value: C:\Windows\System32\
+    not: true
+  - op: contains
     path: event/FILE_PATH
-    value: "C:\\Windows\\SysWOW64\\"
+    value: C:\Windows\SysWOW64\
+    not: true
 
   # Response Logic
-  - action: report
-    name: Critical-PsExec-Behavioral-Detection
-  - action: task
-    command: terminate
+- action: report
+  name: Critical-PsExec-Behavioral-Detection
+- action: task
+  command: terminate
