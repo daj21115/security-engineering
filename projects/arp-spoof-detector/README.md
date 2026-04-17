@@ -12,7 +12,7 @@ Detects ARP spoofing attacks on a local network by monitoring ARP traffic for MA
 ## Use Case
 
 ARP spoofing is a common man-in-the-middle attack vector. This tool provides passive detection
-on a network segment — useful in a SOC lab or on a monitored subnet.
+on a network segment useful in a SOC lab or on a monitored subnet.
 
 ## Tools / Libraries
 
